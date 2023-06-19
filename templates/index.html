@@ -8,11 +8,14 @@
 <body>
     <div>
         <h1>Descargar Videos de Youtube</h1>
-        <form action="/download" method="POST">
+        <form action="/download" method="POST" id="formu">
             <input type="url" placeholder="https://www.youtube.com/watch?v=EJEMPLO" name="link">
-        <button type="sumbit">Descargar</button>
+        <button type="submit">Descargar</button>
     </form>
     </div>
+<script>
+    let formulario = document.getElementById('formu')
+</script>
 
 </body>
 </html>
