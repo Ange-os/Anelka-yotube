@@ -5,10 +5,8 @@ import re
 
 app = Flask(__name__)
 
-# Crear carpeta 'downloads' si no existe
-downloads_folder = os.path.join(app.root_path, 'downloads')
-if not os.path.exists(downloads_folder):
-    os.makedirs(downloads_folder)
+
+path = os.getcwd() + '/output/'
 
 @app.route('/')
 def index():
@@ -17,13 +15,22 @@ def index():
 @app.route('/download', methods=['POST'])
 def download():
     url = request.form['link']
-    yt = YouTube(url)
-    title = yt.title
-    filename = re.sub(r'[^\w\s-]', '', title) + '.mp4'
-    filepath = os.path.join(downloads_folder, filename)
-    video = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
-    video.download(output_path=downloads_folder, filename=filename)
-    return send_file(filepath, as_attachment=True)
+    if url.startswith('http://') or url.startswith('https://'):
+        try:
+            yt = YouTube(url)
+            title = yt.title
+            filename = re.sub(r'[^\w\s-]', '', title) + '.mp4'
+            p = path + title + '.mp4'
+            video = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
+            video.download(path)
+            return send_file(p, as_attachment=True)
+            redirect(url_for('index.html')) 
+        except Exception as e:
+            flash('Error al descargar el video: ' + str(e))
+    else:
+        flash('URL no válida')
+
 
 if __name__ == '__main__':
     app.run()
+
