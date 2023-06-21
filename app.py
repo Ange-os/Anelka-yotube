@@ -30,9 +30,11 @@ def download():
             return send_file(filepath, as_attachment=True)
         except Exception as e:
             flash('Error al descargar el video: ' + str(e))
+            return redirect(url_for('index')) 
     else:
         flash('URL no válida')
-    return redirect(url_for('index')) 
+    return redirect(url_for('index'))
+
 
 def delete_files(folder):
     for file in os.listdir(folder):
