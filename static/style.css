@@ -1,125 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-}
-body {
-    background-image: url('/static/img/bg.jpg');
-    background-size: cover;
-}
-header {
-    position: relative;
-    width: 100%;
-    height: 4rem;
-    margin-bottom: 3rem;
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.877);
-}
-header h1 {
-    font-size:xx-large;
-    padding-left: 3rem;
-    padding-top: 1rem;
-}
-.total {
-    --animate-duration: 2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.container {
-    color: white;
-    background-color: #000000;
-    border: solid 2px #3affca;
-    width: 55vh;
-    height: 45vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 3rem;
-    padding: 1rem;
-    border-radius: 15% 30% 10% 30%;
-}
-.container .title{
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 2.2rem;
-}
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.form h3 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-.form input {
-    font-size: medium;
-    width: 100%;
-    height: 2rem;
-    border-radius: 10px;
-    background-color: #8bbdaa;
-    color: white;
-}
-.form .btn {
-    margin-top: 14px;
-}
-.form .btn button {
-    color: rgba(255, 255, 255, 0.918);
-    background-color: #00319a;
-    height: 2.25rem;
-    width: 9rem;
-    font-size: 1.45rem;
-    border-radius: 6px;
-}
-.form .btn button:hover {
-    cursor:pointer;
-}
-.blu{
-    width: 20rem;
-    height: 20rem;
-    position: absolute;
-    bottom: 40%;
-    left: 5%;
-    animation: rotate 25s linear infinite;
-}
-.moon{
-    width: 10rem;
-    height: 6.6rem;
-    position: absolute;
-    top: 7%; /* Ajusta el valor según la posición vertical deseada */
-    right: 42%; /* Ajusta el valor según la posición horizontal deseada */
-    transform: translate(-50%, -50%);
-    animation: inverRotate 15s linear infinite
-}
-.gris{
-    width: 40rem;
-    height: 30rem;
-    position: absolute;
-    bottom: 5%; /* Ajusta el valor según la posición vertical deseada */
-    right: 2%; /* Ajusta el valor según la posición horizontal deseada */
-    transform: translate(-50%, -50%);
-    animation: rotate 40s linear infinite;
-}
-@keyframes rotate {
-    0% {
-    transform: rotate(0deg);
+:root {
+    --primary-color: #eb53f4;
     }
-    100% {
-    transform: rotate(360deg);
+    
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'Inter', sans-serif;
     }
-}
-@keyframes inverRotate {
-    0% {
-    transform: rotate(0deg);
+    
+    body {
+        background-image: url('/static/img/bg-6.jpg');
+        background-size: cover;
+        overflow: hidden;
     }
-    100% {
-    transform: rotate(-360deg);
+    
+    header {
+        position: relative;
+        width: 100%;
+        height: 4rem;
+        margin-bottom: 3rem;
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.877);
     }
-}
+    
+    header h1 {
+        font-size: xx-large;
+        padding-left: 5rem;
+        padding-top: 1rem;
+    }
+    
+    .container {
+        color: white;
+        background-color: #000000;
+        border: solid 2px var(--primary-color);
+        width: 55vh;
+        height: 45vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0 auto; /* Agrega esta línea para centrar horizontalmente */
+        margin-top: 3rem;
+        padding: 1rem;
+        border-radius: 15% 30% 10% 30%;
+    }  
+    
+    .container .title {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 2.2rem;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .form h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .form input {
+        font-size: medium;
+        width: 100%;
+        height: 2rem;
+        border-radius: 10px;
+        background-color: #f789fd;
+        color: white;
+    }
+    
+    .form .btn {
+        margin-top: 14px;
+    }
+    
+    .form .btn button {
+        color: rgba(255, 255, 255, 0.918);
+        background-color: #9940f4;
+        height: 2.25rem;
+        width: 9rem;
+        font-size: 1.45rem;
+        border-radius: 6px;
+    }
+    
+    .form .btn button:hover {
+        cursor: pointer;
+    }
+    
+    .moon {
+        width: 28rem;
+        height: 20rem;
+        position: absolute;
+        bottom: 40%;
+        left: 5%;
+        animation: rotate 15s linear infinite;
+        opacity: 0.90;
+    }
+    
+    .blu {
+        width: 10rem;
+        height: 10rem;
+        position: absolute;
+        top: 7%;
+        right: 25%;
+        transform: translate(-50%, -50%);
+        animation: inverRotate 10s linear infinite;
+        opacity: 0.90;
+    }
+    
+    .gris {
+        width: 40rem;
+        height: 30rem;
+        position: absolute;
+        bottom: 5%;
+        right: 2%;
+        transform: translate(-50%, -50%);
+        animation: rotate 20s linear infinite;
+        opacity: 0.90;
+    }
+    
+    .asteroi {
+        width: 10rem;
+        height: 10rem;
+        position: absolute;
+        bottom: 5%;
+        left: 18%;
+        transform: translate(-60%, -50%);
+        animation: combinedAnimation 4s linear infinite;
+        opacity: 0.90;
+    }
+    
+    @keyframes rotate {
+        0% {
+        transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes inverRotate {
+        0% {
+        transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(-360deg);
+        }
+    }
+    @keyframes combinedAnimation {
+        0% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+        50% {
+            transform: translate(14rem, -15rem) rotate(180deg);
+        }
+        100% {
+            transform: translate(0, 0) rotate(360deg);
+        }
+    }

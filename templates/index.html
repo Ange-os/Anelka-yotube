@@ -5,39 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANELKA</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
-    <!--<link rel="stylesheet" href="st.css">-->
+    <!--<link rel="stylesheet" href="casd.css">-->
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
 </head>
 <body>
-    <section>
-        <header>
-            <h1>Anelka.com</h1>
-        </header>
-    </section>
-    <article class="animate__animated animate__fadeIn  total">
-        <div class="container">
-            <h2 class="title">Descargar Videos de Youtube</h2>
-            <form action="/download" method="POST" id="formu" class="form">
-                <h3>copiar y luego pegar el link o url del video</h3>
-                <input type="url" placeholder="https://www.youtube.com/watch?v=EJEMPLO" name="link" required>
-                <div class="btn">
-                    <button type="submit">Descargar</button>
-                </div>
-            </form>
-        </div>
-    </article>
-        <article>
-            <img src="../static/img/moon.png" alt="moon-article" class="moon">
-        </article>
-        <article>
-            <img src="../static/img/blue.png" alt="moon-article" class="blu">
-        </article>
-        <article>
-            <img src="../static/img/grey.png" alt="moon-article" class="gris">
-        </article>
-
+    <header>
+        <h1>Anelka.com</h1>
+    </header>
+    <div class="animate__animated animate__fadeIn animate__delay-2s container">
+        <h2 class="title">Descargar Videos de Youtube</h2>
+        <form action="/download" method="POST" id="formu" class="form">
+            <h3>copiar y luego pegar el link o url del video</h3>
+            <input type="url" placeholder="https://www.youtube.com/watch?v=EJEMPLO" name="link" required>
+            <div class="btn">
+                <button type="submit">Descargar</button>
+            </div>
+        </form>
+    </div>
+    <img src="../static/img/moon.png" alt="moon-article" class="moon">
+    <img src="../static/img/blue.png" alt="moon-article" class="blu">
+    <img src="../static/img/grey.png" alt="moon-article" class="gris">
+    <img src="../static/img/R.png" alt="moon-article" class="asteroi">
 </body>
 </html>
